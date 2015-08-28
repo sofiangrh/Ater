@@ -1,0 +1,65 @@
+style "button"
+{
+  
+xthickness = 2
+ythickness = 3
+
+  fg[NORMAL] = "#481a18"
+  fg[PRELIGHT] = "#d1f162"
+  fg[SELECTED] = "#ffffff"
+  fg[ACTIVE] = "#000000"
+  fg[INSENSITIVE] = "#481a18"
+  text[NORMAL] = "#ffffff"
+  text[PRELIGHT] = "#ffffff"
+  text[SELECTED] = "#ffffff"
+  text[ACTIVE] = "#ffffff"
+  text[INSENSITIVE] = "#ffffff"
+
+  engine "pixmap"
+  {
+    image
+    {
+      function			= BOX
+      detail				= "buttondefault"
+      recolorable		= TRUE
+      file				= "Buttons/button-default.png"
+      border			= { 10, 10, 10, 10 }
+      stretch			= TRUE
+    }
+    image
+    {
+      function			= BOX
+      state				= PRELIGHT
+      recolorable		= TRUE
+      file				= "Buttons/button-prelight.png"
+      border			= { 10, 10, 10, 10 }
+      stretch			= TRUE
+    }
+    image
+    {
+      function			= BOX
+      state				= ACTIVE
+      file				= "Buttons/button-pressed.png"
+      border			= { 10, 10, 10, 10 }
+      stretch			= TRUE
+    }	
+    image 
+   {
+     function			= BOX
+     state				= INSENSITIVE
+     file					= "Buttons/button-insensitive.png"
+     border			= { 10, 10, 10, 10 }
+     stretch			= TRUE
+    }
+    image 
+    {
+      function			= BOX
+      file				= "Buttons/button-normal.png"		
+      border			= { 10, 10, 10, 10 }
+      stretch			= TRUE
+     }	
+  }
+}
+
+class "GtkButton"	style "button"
+widget_class "*GtkToggleButton*"   style "button"
